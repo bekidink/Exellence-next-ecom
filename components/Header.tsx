@@ -73,7 +73,7 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4 lg:px-0">
         {/* Logo */}
         <Link href={"/"}>
-          <img src={"/logo.webp"} alt="logo" className="w-44" />
+          {/* <img src={"/logo.webp"} alt="logo" className="w-44" /> */}
         </Link>
         {/* SearchBar */}
         <div className="hidden md:inline-flex max-w-3xl w-full relative">
