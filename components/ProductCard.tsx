@@ -40,7 +40,7 @@ const ProductCard = ({ item, setSearchText }: Props) => {
       <div className="w-full h-60 relative p-2 group">
         <span
           onClick={open}
-          className="bg-black dark:bg-white text-skyText absolute left-0 right-0 w-16 text-xs text-center py-1 rounded-md font-semibold inline-block z-10"
+          className="bg-black dark:bg-white dark:text-slate-800 text-slate-50  absolute left-0 right-0 w-16 text-xs text-center py-1 rounded-md font-semibold inline-block z-10"
         >
           save {percentage.toFixed(0)}%
         </span>

@@ -1,6 +1,6 @@
 export interface HighlightsType {
-  _id: number;
-  _base: string;
+  id: string;
+  base: string;
   title: string;
   name: string;
   image: string;
@@ -9,10 +9,10 @@ export interface HighlightsType {
 }
 
 export interface CategoryProps {
-  _id: number;
+  id: string;
   image: string;
   name: string;
-  _base: string;
+  base: string;
   description: string;
 }
 

@@ -9,7 +9,7 @@ const Footer = () => {
       <FooterTop />
       <Container className="flex flex-col md:flex-row items-center gap-4 justify-between">
         <p>@2024 E-commerce solutions. All rights reserved.</p>
-        <img src={payment} alt="payment-img" className="object-cover" />
+        <img src={'/payment.webp'} alt="payment-img" className="object-cover" />
       </Container>
     </div>
   );

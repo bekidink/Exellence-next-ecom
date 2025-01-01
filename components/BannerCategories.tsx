@@ -55,8 +55,8 @@ const BannerCategories = () => {
     >
       {categories.map((item: CategoryProps) => (
         <Link
-          key={item?._id}
-          href={`category/${item?._base}`}
+          key={item?.id}
+          href={`category/${item?.base}`}
           className="flex items-center gap-x-2 p-1 border border-gray-100 mr-1 flex-1 rounded-md hover:border-skyText hover:shadow-lg"
         >
           <img

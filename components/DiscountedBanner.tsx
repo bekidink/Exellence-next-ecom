@@ -28,7 +28,7 @@ const DiscountedBanner = () => {
         <Title text="Popular Search" />
         <div className="w-full h-[1px] bg-gray-200 mt-3" />
       </div>
-      <div className="my-7 flex items-center flex-wrap gap-4">
+      {/* <div className="my-7 flex items-center flex-wrap gap-4">
         {popularSearchItems?.map(({ title, link }) => (
           <Link
             key={title}
@@ -38,10 +38,10 @@ const DiscountedBanner = () => {
             {title}
           </Link>
         ))}
-      </div>
+      </div> */}
       <div className="w-full py-5 md:py-0 my-12 bg-[#f6f6f6] rounded-lg flex items-center justify-between overflow-hidden">
         <img
-          src={discountImgOne}
+          src={"/discountImgOne.png"}
           alt="discountedImgOne"
           className="hidden lg:inline-flex h-36"
         />
@@ -60,7 +60,7 @@ const DiscountedBanner = () => {
           </p>
         </div>
         <img
-          src={discountImgTwo}
+          src={"/discountImgTwo.webp"}
           alt="discountedImgTwo"
           className="hidden lg:inline-flex h-36"
         />
@@ -70,42 +70,42 @@ const DiscountedBanner = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mt-7">
           <div className="border border-r-0 border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandOne}
+              src={"/brands/brandOne.webp"}
               alt="brandOne"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />
           </div>
           <div className="border border-r-0 border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandTwo}
+              src={"/brands/brandTwo.webp"}
               alt="brandTwo"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />
           </div>
           <div className="border border-r-0 border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandThree}
+              src={"/brands/brandThree.webp"}
               alt="brandThree"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />
           </div>
           <div className="border border-r-0 border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandFour}
+              src={"/brands/brandFour.webp"}
               alt="brandFour"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />
           </div>
           <div className="border border-r-0 border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandFive}
+              src={"/brands/brandFive.webp"}
               alt="brandFive"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />
           </div>
           <div className="border border-gray-300 flex items-center justify-center px-6 py-2 cursor-pointer group">
             <img
-              src={brandSix}
+              src={"/brands/brandSix.webp"}
               alt="brandSix"
               className="w-36 h-auto group-hover:opacity-50 duration-200"
             />

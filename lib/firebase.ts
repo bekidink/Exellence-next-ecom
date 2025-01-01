@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -8,13 +9,13 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDywLudxE5EjCvsNlrJ3i1wtQXuC6JESyw",
-  authDomain: "chatbot-7a065.firebaseapp.com",
-  projectId: "chatbot-7a065",
-  storageBucket: "chatbot-7a065.firebasestorage.app",
-  messagingSenderId: "395082274069",
-  appId: "1:395082274069:web:47ca5933957c5f0761451c",
-  measurementId: "G-Y6YCK28W0R",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

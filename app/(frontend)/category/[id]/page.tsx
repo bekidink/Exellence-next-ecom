@@ -11,6 +11,7 @@ import { useParams } from "next/navigation";
 
 const Category = ({ params: { id } }: { params: { id: string } }) => {
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState(false);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +19,8 @@ const Category = ({ params: { id } }: { params: { id: string } }) => {
       try {
         setLoading(true);
         const data = await getData(endpoint);
-        setProducts(data);
+        setCategory(data.name)
+        setProducts(data.products);
       } catch (error) {
         console.error("Error fetching data", error);
       } finally {
@@ -41,7 +43,7 @@ const Category = ({ params: { id } }: { params: { id: string } }) => {
       ) : (
         <Container>
           <h2 className="text-4xl text-center font-semibold mb-5">
-            {formatId(id!)}
+            {category}
           </h2>
           <div className="flex items-start gap-10">
             <CategoryFilters id={id} />

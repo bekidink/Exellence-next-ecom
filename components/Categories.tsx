@@ -40,8 +40,8 @@ const Categories = () => {
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-7">
         {categories.map((item: CategoryProps) => (
           <Link
-            href={`/category/${item?._base}`}
-            key={item?._id}
+            href={`/category/${item?.id}`}
+            key={item?.id}
             className="w-full h-auto relative group overflow-hidden"
           >
             <img

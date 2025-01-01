@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { UserTypes } from "../../type";
+import { UserTypes } from "@/type";
 import { auth } from "../lib/firebase";
 import Container from "./Container";
 

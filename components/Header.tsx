@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import {
   Menu,
@@ -73,7 +73,7 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4 lg:px-0">
         {/* Logo */}
         <Link href={"/"}>
-          <img src={logo} alt="logo" className="w-44" />
+          <img src={"/logo.webp"} alt="logo" className="w-44" />
         </Link>
         {/* SearchBar */}
         <div className="hidden md:inline-flex max-w-3xl w-full relative">
@@ -143,7 +143,7 @@ const Header = () => {
               {cartProduct?.length > 0 ? cartProduct?.length : "0"}
             </span>
           </Link>
-          <ModeToggle/>
+          <ModeToggle />
         </div>
       </div>
       <div className="w-full bg-darkText text-whiteText">
@@ -165,9 +165,9 @@ const Header = () => {
                 className="w-52 origin-top-right rounded-xl border border-white/5 bg-black p-1 text-sm/6 text-gray-300 [--anchor-gap:var(--spacing-1)] focus:outline-none hover:text-white z-50"
               >
                 {categories.map((item: CategoryProps) => (
-                  <MenuItem key={item?._id}>
+                  <MenuItem key={item?.id}>
                     <Link
-                      href={`/category/${item?._base}`}
+                      href={`/category/${item?.id}`}
                       className="flex w-full items-center gap-2 rounded-lg py-2 px-3 data-[focus]:bg-white/20 tracking-wide"
                     >
                       <img

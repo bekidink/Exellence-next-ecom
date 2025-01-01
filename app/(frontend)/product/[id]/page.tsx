@@ -176,7 +176,7 @@ const Product = ({ params: { id } }: { params: { id: string } }) => {
                 />
                 <div className="bg-[#f7f7f7] p-5 rounded-md flex flex-col items-center justify-center gap-2">
                   <img
-                    src={productPayment}
+                    src={'/payment.webp'}
                     alt="payment"
                     className="w-auto object-cover"
                   />

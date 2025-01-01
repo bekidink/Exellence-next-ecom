@@ -25,7 +25,7 @@ const Hightlights = () => {
     <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {highlightsData.map((item: HighlightsType) => (
         <div
-          key={item?._id}
+          key={item?.id}
           className="relative h-60 rounded-lg shadow-md cursor-pointer overflow-hidden group"
         >
           <div
@@ -43,7 +43,7 @@ const Hightlights = () => {
               <h3 className="text-2xl font-bold max-w-44">{item?.name}</h3>
               <p className="text-base font-bold mt-4">{item?.title}</p>
             </div>
-            <Link href={item?._base} className="text-base font-normal">
+            <Link href={item?.base} className="text-base font-normal">
               {item?.buttonTitle}
             </Link>
           </div>

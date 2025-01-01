@@ -58,7 +58,7 @@ const Product = () => {
   }, [productData]);
 
   return (
-    <div className="bg-zinc-50 dark:bg-slate-800">
+    <div className="">
       {loading ? (
         <Loading />
       ) : (
@@ -188,7 +188,7 @@ const Product = () => {
             </div>
           ) : (
             <div className="flex items-start gap-10">
-              <CategoryFilters id={id} />
+              {/* <CategoryFilters id={id} /> */}
               <div>
                 <p className="text-4xl font-semibold mb-5 text-center">
                   Products Collection
