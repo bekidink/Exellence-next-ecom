@@ -1,20 +1,24 @@
+"use client"
 import { store } from "@/lib/store";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import { arrayUnion, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import Container from "@/components/Container";
 import Loading from "@/components/Loading";
+import Link from "next/link";
 
 const Success = () => {
   const { currentUser, cartProduct, resetCart } = store();
-  const location = useLocation();
-  const sessionId = new URLSearchParams(location.search).get("session_id");
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { query } = router;
+  const sessionId = query.session_id as string;
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     if (!sessionId) {
-      navigate("/");
+      router.push("/");
     } else if (cartProduct.length > 0) {
       const saveOrder = async () => {
         try {
@@ -55,7 +59,7 @@ const Success = () => {
       };
       saveOrder();
     }
-  }, [sessionId, navigate, currentUser, cartProduct]);
+  }, [sessionId, router, currentUser, cartProduct]);
 
   return (
     <Container>
@@ -71,12 +75,12 @@ const Success = () => {
           Shopping with us
         </p>
         <div className="flex items-center gap-x-5">
-          <Link to={"/orders"}>
+          <Link href="/orders">
             <button className="bg-black text-slate-100 w-52 h-12 rounded-full text-base font-semibold hover:bg-primeColor duration-300">
               View Orders
             </button>
           </Link>
-          <Link to={"/"}>
+          <Link href="/">
             <button className="bg-black text-slate-100 w-52 h-12 rounded-full text-base font-semibold hover:bg-primeColor duration-300">
               Continue Shopping
             </button>
