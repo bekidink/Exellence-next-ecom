@@ -1,19 +1,19 @@
 "use client"
 import { store } from "@/lib/store";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { Suspense, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { arrayUnion, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import Container from "@/components/Container";
 import Loading from "@/components/Loading";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const Success = () => {
+const SuccessContent = () => {
   const { currentUser, cartProduct, resetCart } = store();
   const router = useRouter();
-  const { query } = router;
-  const sessionId = query.session_id as string;
+  const searchParams = useSearchParams();
+  const sessionId = searchParams.get("session_id"); 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -90,5 +90,10 @@ const Success = () => {
     </Container>
   );
 };
+const Success = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <SuccessContent />
+  </Suspense>
+);
 
 export default Success;
