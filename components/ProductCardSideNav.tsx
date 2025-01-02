@@ -13,7 +13,7 @@ const ProductCardSideNav = ({ product }: { product?: ProductProps }) => {
 
   useEffect(() => {
     const availableItem = favoriteProduct.find(
-      (item) => item?._id === product?._id
+      (item) => item?.id === product?.id
     );
     setExistingProduct(availableItem || null);
   }, [product, favoriteProduct]);

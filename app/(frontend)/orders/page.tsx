@@ -116,11 +116,11 @@ const Orders = () => {
                             </div>
                             {order?.orderItems?.map((item: ProductProps) => (
                               <div
-                                key={item?._id}
+                                key={item?.id}
                                 className="flex space-x-6 border-b border-gray-200 py-3"
                               >
                                 <Link
-                                  href={`/product/${item?._id}`}
+                                  href={`/product/${item?.id}`}
                                   className="h-20 w-20 flex-none sm:h-40 sm:w-40 rounded-lg bg-gray-100 border border-gray-300 hover:border-skyText overflow-hidden"
                                 >
                                   <img
@@ -132,7 +132,7 @@ const Orders = () => {
                                 <div className="flex flex-auto flex-col">
                                   <div>
                                     <Link
-                                      href={`/product/${item?._id}`}
+                                      href={`/product/${item?.id}`}
                                       className="font-medium text-gray-900"
                                     >
                                       {item?.name}

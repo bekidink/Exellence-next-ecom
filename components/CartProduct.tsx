@@ -11,13 +11,13 @@ const CartProduct = ({ product }: { product: ProductProps }) => {
   const { removeFromCart } = store();
   const handleRemoveProduct = () => {
     if (product) {
-      removeFromCart(product?._id);
+      removeFromCart(product?.id);
       toast.success(`${product?.name.substring(0, 20)} deleted successfully!`);
     }
   };
   return (
     <div className="flex py-6 sm:py-10">
-      <Link href={`/product/${product?._id}`}>
+      <Link href={`/product/${product?.id}`}>
         <img
           src={product?.images[0]}
           alt="productImage"

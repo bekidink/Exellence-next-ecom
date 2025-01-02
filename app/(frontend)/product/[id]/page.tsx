@@ -195,7 +195,7 @@ const Product = ({ params: { id } }: { params: { id: string } }) => {
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                   {allProducts?.map((item: ProductProps) => (
-                    <ProductCard item={item} key={item?._id} />
+                    <ProductCard item={item} key={item?.id} />
                   ))}
                 </div>
               </div>

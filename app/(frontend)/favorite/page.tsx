@@ -24,7 +24,7 @@ const Favorite = () => {
           <div className="mt-6 flow-root px-4 sm:mt-10 sm:px-0">
             <div className="-my-6 divide-y divide-gray-200 sm:-my-10">
               {favoriteProduct?.map((product) => (
-                <FavoriteProduct key={product?._id} product={product} />
+                <FavoriteProduct key={product?.id} product={product} />
               ))}
             </div>
           </div>

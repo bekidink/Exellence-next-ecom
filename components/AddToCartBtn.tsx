@@ -24,7 +24,7 @@ const AddToCartBtn = ({
 
   useEffect(() => {
     const availableItem = cartProduct.find(
-      (item) => item?._id === product?._id
+      (item) => item?.id === product?.id
     );
 
     setExistingProduct(availableItem || null);
@@ -42,7 +42,7 @@ const AddToCartBtn = ({
   const handleDeleteProduct = () => {
     if (existingProduct) {
       if (existingProduct?.quantity > 1) {
-        decreaseQuantity(existingProduct?._id);
+        decreaseQuantity(existingProduct?.id);
         toast.success(
           `${product?.name.substring(0, 10)} decreased successfully`
         );
