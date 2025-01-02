@@ -49,7 +49,7 @@ const Category = ({ params: { id } }: { params: { id: string } }) => {
             <CategoryFilters id={id} />
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {products?.map((item: ProductProps) => (
-                <ProductCard item={item} key={item?._id} />
+                <ProductCard item={item} key={item?.id} />
               ))}
             </div>
           </div>

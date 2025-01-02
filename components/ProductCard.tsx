@@ -32,7 +32,7 @@ const ProductCard = ({ item, setSearchText }: Props) => {
     ((item?.regularPrice - item?.discountedPrice) / item?.regularPrice) * 100;
 
   const handleProduct = () => {
-    navigation.push(`/product/${item?._id}`);
+    navigation.push(`/product/${item?.id}`);
     setSearchText && setSearchText("");
   };
   return (

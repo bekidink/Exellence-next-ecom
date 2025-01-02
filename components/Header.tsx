@@ -100,7 +100,7 @@ const Header = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
                 {filteredProducts?.map((item: ProductProps) => (
                   <ProductCard
-                    key={item?._id}
+                    key={item?.id}
                     item={item}
                     setSearchText={setSearchText}
                   />

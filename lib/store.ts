@@ -25,13 +25,13 @@ interface StoreType {
   // cart
   cartProduct: CartProduct[];
   addToCart: (product: ProductProps) => Promise<void>;
-  decreaseQuantity: (productId: number) => void;
-  removeFromCart: (productId: number) => void;
+  decreaseQuantity: (productId: string) => void;
+  removeFromCart: (productId: string) => void;
   resetCart: () => void;
   // // favorite
   favoriteProduct: CartProduct[];
   addToFavorite: (product: ProductProps) => Promise<void>;
-  removeFromFavorite: (productId: number) => void;
+  removeFromFavorite: (productId: string) => void;
   resetFavorite: () => void;
 }
 
@@ -74,13 +74,13 @@ export const store = create<StoreType>()(
         return new Promise<void>((resolve) => {
           set((state: StoreType) => {
             const existingProduct = state.cartProduct.find(
-              (p) => p._id === product._id
+              (p) => p.id === product.id
             );
 
             if (existingProduct) {
               return {
                 cartProduct: state.cartProduct.map((p) =>
-                  p._id === product._id
+                  p.id === product.id
                     ? { ...p, quantity: (p.quantity || 0) + 1 }
                     : p
                 ),
@@ -97,16 +97,16 @@ export const store = create<StoreType>()(
           resolve();
         });
       },
-      decreaseQuantity: (productId: number) => {
+      decreaseQuantity: (productId: string) => {
         set((state: StoreType) => {
           const existingProduct = state.cartProduct.find(
-            (p) => p._id === productId
+            (p) => p.id === productId
           );
 
           if (existingProduct) {
             return {
               cartProduct: state.cartProduct.map((p) =>
-                p._id === productId
+                p.id === productId
                   ? { ...p, quantity: Math.max(p.quantity - 1, 1) }
                   : p
               ),
@@ -116,10 +116,10 @@ export const store = create<StoreType>()(
           }
         });
       },
-      removeFromCart: (productId: number) => {
+      removeFromCart: (productId: string) => {
         set((state: StoreType) => ({
           cartProduct: state.cartProduct.filter(
-            (item) => item._id !== productId
+            (item) => item.id !== productId
           ),
         }));
       },
@@ -130,12 +130,12 @@ export const store = create<StoreType>()(
         return new Promise<void>((resolve) => {
           set((state: StoreType) => {
             const isFavorite = state.favoriteProduct.some(
-              (item) => item._id === product._id
+              (item) => item.id === product.id
             );
             return {
               favoriteProduct: isFavorite
                 ? state.favoriteProduct.filter(
-                    (item) => item._id !== product._id
+                    (item) => item.id !== product.id
                   )
                 : [...state.favoriteProduct, { ...product }],
             };
@@ -144,10 +144,10 @@ export const store = create<StoreType>()(
         });
       },
 
-      removeFromFavorite: (productId: number) => {
+      removeFromFavorite: (productId: string) => {
         set((state: StoreType) => ({
           favoriteProduct: state.favoriteProduct.filter(
-            (item) => item._id !== productId
+            (item) => item.id !== productId
           ),
         }));
       },
